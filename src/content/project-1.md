@@ -2,10 +2,10 @@
 title: "Code Example"
 date: "2019-06-06"
 draft: false
-path: "/blog/code-example"
+path: "/portfolio/project-1"
 ---
 
-## An Code example with PrismJS
+## project-test
 Gatsby-Starter-Julia uses the Atom Editor Theme.
 
 ```js

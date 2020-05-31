@@ -65,6 +65,8 @@ const HomeLink = styled(NavLink)`
   margin-left: 0;
 `
 
+
+
 const SiteHeader = styled.header`
   background: transparent;
   display: flex;
@@ -76,11 +78,15 @@ const Header = ({ siteTitle }) => (
   <SiteHeader>
     <Content>
       <p>
-        <HomeLink to="/">{siteTitle}</HomeLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <GitHubLink href="https://github.com/niklasmtj/gatsby-starter-julia">
+        <HomeLink to="/">LL</HomeLink>
+        <NavLink to="/portfolio">Portfolio</NavLink>
+        <NavLink href="https://www.linkedin.com/in/lital-levin-4a989010/">
+          LinkedIn
+        </NavLink>
+        <GitHubLink href="https://github.com/LL27">
           GitHub
         </GitHubLink>
+
       </p>
     </Content>
   </SiteHeader>

@@ -28,17 +28,12 @@ const MarkerHeader = styled.h3`
   );
 `
 
-const ReadingTime = styled.h5`
-  display: inline;
-  color: #606060;
-`
-
-const IndexPage = ({ data }) => {
+const PortfolioPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Portfolio" />
       <Content>
-        <h1>Blog</h1>
+        <h1>Portfolio</h1>
         {data.allMarkdownRemark.edges
           .filter(({ node }) => {
             const rawDate = node.frontmatter.rawDate
@@ -57,7 +52,7 @@ const IndexPage = ({ data }) => {
                 <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
                 <div>
                   <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                  <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
+
                 </div>
                 <p>{node.excerpt}</p>
               </Link>
@@ -68,7 +63,7 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default PortfolioPage
 
 export const query = graphql`
   query {
@@ -93,9 +88,6 @@ export const query = graphql`
           }
           fields {
             slug
-            readingTime {
-              text
-            }
           }
           excerpt
         }
