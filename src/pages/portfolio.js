@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
+import Header from "../components/header"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -31,6 +32,8 @@ const MarkerHeader = styled.h3`
 const PortfolioPage = ({ data }) => {
   return (
     <Layout>
+      <Header siteTitle={data.site.siteMetadata.title}/>
+
       <SEO title="Portfolio" />
       <Content>
         <h1>Portfolio</h1>

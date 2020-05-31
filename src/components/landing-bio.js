@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
+import Header from "./header"
+
 
 const Container = styled.div`
   text-align: center;
@@ -43,6 +45,7 @@ const LandingBio = () => (
         <Container>
           <NameHeader>{data.site.siteMetadata.title}</NameHeader>
           <Description>{data.site.siteMetadata.subtitle}</Description>
+          <Header siteTitle={data.site.siteMetadata.title}/>
         </Container>
       </OuterContainer>
     )}

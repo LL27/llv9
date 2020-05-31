@@ -60,7 +60,9 @@ const GitHubLink = styled.a`
     transform-origin: bottom left;
   }
 `
+const LinkedInLink = styled(GitHubLink)`
 
+`
 const HomeLink = styled(NavLink)`
   margin-left: 0;
 `
@@ -80,9 +82,9 @@ const Header = ({ siteTitle }) => (
       <p>
         <HomeLink to="/">LL</HomeLink>
         <NavLink to="/portfolio">Portfolio</NavLink>
-        <NavLink href="https://www.linkedin.com/in/lital-levin-4a989010/">
+        <LinkedInLink href="https://www.linkedin.com/in/lital-levin-4a989010">
           LinkedIn
-        </NavLink>
+        </LinkedInLink>
         <GitHubLink href="https://github.com/LL27">
           GitHub
         </GitHubLink>
