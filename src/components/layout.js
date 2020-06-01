@@ -25,7 +25,7 @@ const GatsbyLink = styled.a`
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 `
 
 const Layout = ({ children }) => (
@@ -46,10 +46,10 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer>
             <p>
-            © {new Date().getFullYear()}, Built with
-            {` `}
+            © {new Date().getFullYear()},
+            {` `}LL
             </p>
-            <GatsbyLink href="https://www.gatsbyjs.org">Gatsby</GatsbyLink>
+
           </Footer>
         </Content>
       </>
