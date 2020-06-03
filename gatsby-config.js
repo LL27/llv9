@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
     title: `Lital Levin`,
-    subtitle: `fullstack web development`,
-    description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
-    author: `@niklasmtj`,
+    subtitle: `web development`,
+    description: `The personal website of Lital Levin`,
+    bio: `bio text`,
+    author: `Lital Levin`,
   },
+
   plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

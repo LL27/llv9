@@ -4,6 +4,8 @@ import styled from "@emotion/styled"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
+
 const Content = styled.div`
   margin: 0 auto;
   max-width: 860px;
@@ -47,19 +49,19 @@ const MarkdownContent = styled.div`
 `
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const project = data.markdownRemark
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={project.frontmatter.title}
+        description={project.frontmatter.description || project.excerpt}
       />
       <Content>
-        <MarkedHeader>{post.frontmatter.title}</MarkedHeader>
+        <MarkedHeader>{project.frontmatter.title}</MarkedHeader>
         <HeaderDate>
-          {post.frontmatter.date} - {post.fields.readingTime.text}
+          {project.frontmatter.date} - {project.fields.readingTime.text}
         </HeaderDate>
-        <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MarkdownContent dangerouslySetInnerHTML={{ __html: project.html }} />
       </Content>
     </Layout>
   )

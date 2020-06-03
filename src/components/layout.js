@@ -9,14 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
+import Header from "../components/header"
 
-import "./layout.css"
+
 
 const Content = styled.div`
   margin: 0 auto;
-  max-width: 860px;
-  padding: 0 1.0875rem 1rem;
-  padding-top: 0;
+
+    padding: 1.45rem 1.0875rem;
+
 `
 
 const GatsbyLink = styled.a`
@@ -43,6 +44,7 @@ const Layout = ({ children }) => (
       <>
 
         <Content>
+          <Header/>
           <main>{children}</main>
           <Footer>
             <p>

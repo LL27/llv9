@@ -1,14 +1,22 @@
-import { Link } from "gatsby"
-import styled from "@emotion/styled"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql } from "gatsby"
+import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
-const Content = styled.div`
-  max-width: 860px;
-  padding: 1rem 1.0875rem;
-  font-size: 1.2rem;
+
+
+const Container = styled.div`
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 2.4rem;
+
 `
+const Description = styled.p`
 
+  margin-bottom: 0;
+`
 const NavLink = styled(Link)`
   color: black;
   margin-left: 15px;
@@ -34,72 +42,50 @@ const NavLink = styled(Link)`
     transform-origin: bottom left;
   }
 `
-
-const GitHubLink = styled.a`
-  color: black;
-  margin-left: 15px;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-
-  ::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  :hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-`
-const LinkedInLink = styled(GitHubLink)`
-
-`
-const HomeLink = styled(NavLink)`
-  margin-left: 0;
+const NameHeader = styled.h1`
+  margin-bottom: 0;
 `
 
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query LandingSiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            subtitle
+          }
+        }
+      }
+    `}
+    render={data => (
+        <Container>
+          <NameHeader>{data.site.siteMetadata.title}</NameHeader>
+          <Description>{data.site.siteMetadata.subtitle}</Description>
+        </Container>
 
 
-const SiteHeader = styled.header`
-  background: transparent;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-`
 
-const Header = ({ siteTitle }) => (
-  <SiteHeader>
-    <Content>
-      <p>
-        <HomeLink to="/">LL</HomeLink>
-        <NavLink to="/portfolio">Portfolio</NavLink>
-        <LinkedInLink href="https://www.linkedin.com/in/lital-levin-4a989010">
-          LinkedIn
-        </LinkedInLink>
-        <GitHubLink href="https://github.com/LL27">
-          GitHub
-        </GitHubLink>
-
-      </p>
-    </Content>
-  </SiteHeader>
+    )}
+  />
 )
 
-Header.propTypes = {
+NameHeader.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+NameHeader.defaultProps = {
   siteTitle: ``,
 }
+
+Description.propTypes = {
+  subtitle: PropTypes.string,
+}
+
+Description.defaultProps = {
+  subtitle: ``,
+}
+
+
 
 export default Header
