@@ -15,8 +15,7 @@ import Header from "../components/header"
 
 const Content = styled.div`
   margin: 0 auto;
-
-    padding: 1.45rem 1.0875rem;
+  padding: 145px
 
 `
 
