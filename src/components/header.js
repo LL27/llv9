@@ -2,48 +2,31 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { jsx, css } from '@emotion/core'
 
 
 
 const Container = styled.div`
   display:flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
   padding-bottom: 2.4rem;
 
 `
-const Description = styled.p`
-
+const Description = styled.h2`
+  align-self: flex-end;
   margin-bottom: 0;
 `
-const NavLink = styled(Link)`
-  color: black;
-  margin-left: 15px;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
 
-  ::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  :hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-`
 const NameHeader = styled.h1`
   margin-bottom: 0;
+  line-height: 1;
+    width: 175px;
+
+
+
+
 `
 
 const Header = () => (
@@ -60,7 +43,17 @@ const Header = () => (
     `}
     render={data => (
         <Container>
-          <NameHeader>{data.site.siteMetadata.title}</NameHeader>
+          <div css={css`
+           margin-right: 2.2rem;
+           width:200px;
+           @media (min-width: 420px) {
+            }
+      @media (min-width: 576px) {
+      }
+    `}>
+              <NameHeader>{data.site.siteMetadata.title}</NameHeader>
+
+    </div>
           <Description>{data.site.siteMetadata.subtitle}</Description>
         </Container>
 

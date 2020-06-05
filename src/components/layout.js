@@ -9,15 +9,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
+import { jsx, css } from '@emotion/core'
+
 import Header from "../components/header"
 
 
-
-const Content = styled.div`
-  margin: 0 auto;
-  padding: 145px
-
-`
 
 const GatsbyLink = styled.a`
   margin-left: 5px;
@@ -25,7 +21,7 @@ const GatsbyLink = styled.a`
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `
 
 const Layout = ({ children }) => (
@@ -42,17 +38,30 @@ const Layout = ({ children }) => (
     render={data => (
       <>
 
-        <Content>
+        <div
+          css={css`
+          margin: 0 auto;
+          max-width: 1000px;
+          padding: 3.2em 1.4em;
+      @media (min-width: 420px) {
+        padding: 4em;
+      }
+      @media (min-width: 576px) {
+        padding: 7em;
+      }
+    `}
+        >
           <Header/>
           <main>{children}</main>
-          <Footer>
+
+        </div>
+        <Footer>
             <p>
             © {new Date().getFullYear()},
             {` `}LL
             </p>
 
           </Footer>
-        </Content>
       </>
     )}
   />

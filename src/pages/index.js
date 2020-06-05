@@ -11,9 +11,6 @@ import SEO from "../components/seo"
 import "../components/layout.css"
 
 
-const PageWrapper = styled.section`
-`
-
 const ArticleDate = styled.h5`
   display: inline;
   color: #606060;
@@ -31,7 +28,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <PageWrapper>
+
       <Me/>
       <Projects>
         <h2>PROJECTS</h2>
@@ -58,7 +55,6 @@ const IndexPage = ({ data }) => {
 
       </Projects>
 
-      </PageWrapper>
 
     </Layout>
   )
