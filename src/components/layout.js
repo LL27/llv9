@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/core'
 
 import Header from "../components/header"
 
@@ -41,14 +41,15 @@ const Layout = ({ children }) => (
         <div
           css={css`
           margin: 0 auto;
-          max-width: 1000px;
-          padding: 3.2em 1.4em;
-      @media (min-width: 420px) {
-        padding: 4em;
-      }
+          max-width: 1400px;
+          padding: 4em;
       @media (min-width: 576px) {
-        padding: 7em;
+        padding: 6em;
       }
+      @media (min-width: 768px) {
+        padding: 8em;
+      }
+
     `}
         >
           <Header/>
@@ -57,7 +58,7 @@ const Layout = ({ children }) => (
         </div>
         <Footer>
             <p>
-            © {new Date().getFullYear()},
+            © {new Date().getFullYear()}
             {` `}LL
             </p>
 

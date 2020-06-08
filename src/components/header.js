@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/core'
 
 
 
@@ -14,7 +14,7 @@ const Container = styled.div`
   padding-bottom: 2.4rem;
 
 `
-const Description = styled.h2`
+const Description = styled.h3`
   align-self: flex-end;
   margin-bottom: 0;
 `
@@ -22,7 +22,7 @@ const Description = styled.h2`
 const NameHeader = styled.h1`
   margin-bottom: 0;
   line-height: 1;
-    width: 175px;
+
 
 
 
@@ -44,11 +44,12 @@ const Header = () => (
     render={data => (
         <Container>
           <div css={css`
-           margin-right: 2.2rem;
-           width:200px;
+           margin-right: 2.6rem;
+           width: 175px;
            @media (min-width: 420px) {
             }
-      @media (min-width: 576px) {
+      @media (min-width: 876px) {
+        width: auto;
       }
     `}>
               <NameHeader>{data.site.siteMetadata.title}</NameHeader>
