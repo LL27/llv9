@@ -6,13 +6,13 @@ import { css } from '@emotion/core'
 
 
 
+
 const Container = styled.div`
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
   padding-bottom: 2.4rem;
-
 `
 const Description = styled.h3`
   align-self: flex-end;

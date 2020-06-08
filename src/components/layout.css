@@ -61,7 +61,6 @@ template {
 a {
   font-style: normal;
   font-family: "Lora";
-  color: white;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
@@ -344,6 +343,7 @@ ul {
   list-style-position: outside;
   list-style-image: none;
 }
+
 ol {
   margin-left: 1.45rem;
   margin-right: 0;

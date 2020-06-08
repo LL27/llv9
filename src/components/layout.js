@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from '@emotion/core'
 
-import Header from "../components/header"
 
 
 
@@ -41,18 +40,17 @@ const Layout = ({ children }) => (
         <div
           css={css`
           margin: 0 auto;
-          max-width: 1400px;
-          padding: 4em;
+          max-width: 1000px;
+          padding: 2em;
       @media (min-width: 576px) {
-        padding: 6em;
+        padding: 4em;
       }
       @media (min-width: 768px) {
-        padding: 8em;
+        padding: 6em;
       }
 
     `}
         >
-          <Header/>
           <main>{children}</main>
 
         </div>

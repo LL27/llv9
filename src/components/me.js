@@ -4,6 +4,8 @@ import styled from "@emotion/styled"
 import datal from "./data/datal.json"
 import literary from "../images/polaroid-columbia.png" // with import
 import haaretz from "../images/polaroid-haaretz.png" // with import
+import Header from "../components/header"
+import Menu from "../components/menu"
 
 import { CSSTransition } from "react-transition-group"
 import "./hovers.css"
@@ -41,6 +43,7 @@ function Me() {
 
   return (
     <Bio>
+      <Header />
       <BioP>
         Based in Paris, France, I develop fast & efficient web sites using
         advanced Javascript frameworks and Ruby for backend. I enjoy planning
@@ -86,6 +89,7 @@ function Me() {
         </BioLink>{" "} .
       </BioP>
       <BioP>I also enjoy playing the guitar and sewing.</BioP>
+      <Menu/>
     </Bio>
   )
 }
