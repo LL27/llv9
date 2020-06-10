@@ -7,6 +7,8 @@ import media from "styled-media-query";
 import Layout from "../components/layout"
 import Me from "../components/me"
 import lw from "../images/lewagon.jpg"
+import c from "../images/columbia-ny.jpg"
+
 
 import SEO from "../components/seo"
 
@@ -59,6 +61,7 @@ const ProjectImage = styled.img`
    width: 100%;
    margin-bottom: 0px;
    object-fit:cover;
+   background-color: grey;
 
   ${media.greaterThan("medium")`
      width: 360px;
@@ -123,7 +126,7 @@ const IndexPage = ({ data }) => {
 
                 </ProjectContainer>
                                 <ProjectContainerRight>
-                  <ProjectImage src={lw} alt="le wagon" />
+                  <ProjectImage src={c} alt="columbia-ny" />
 
                   <ProjectText>
 
