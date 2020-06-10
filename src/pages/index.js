@@ -23,7 +23,7 @@ const ArticleHeader = styled.h3`
 `
 
 const Projects = styled.div`
-
+  padding-top: 5rem;
 
 `;
 
@@ -37,7 +37,7 @@ const ProjectContainer = styled.section`
   align-items: flex-start;
   height: 320px;
   width: 100%;
-      background-color: pink;
+      background-color: yellow;
       margin-bottom: 6rem;
 
 `
@@ -49,7 +49,7 @@ const ProjectContainerRight = styled.section`
   align-items: flex-start;
   height: 320px;
   width: 100%;
-      background-color: pink;
+      background-color: yellow;
             margin-bottom: 6rem;
 
 
