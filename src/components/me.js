@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import datal from "./data/datal.json"
-import literary from "../images/polaroid-columbia.png" // with import
-import haaretz from "../images/polaroid-haaretz.png" // with import
+import literary from "../images/polaroid-columbia.png"
+import haaretz from "../images/polaroid-haaretz.png"
 import lewagon from "../images/lewagon-polaroid.png"
-import Header from "../components/header"
-import Menu from "../components/menu"
+import Header from "./header"
+import Menu from "./menu"
 
 import { CSSTransition } from "react-transition-group"
 import "./hovers.css"
@@ -48,6 +48,9 @@ function Me() {
 
     <Bio>
       <Header />
+
+
+
       <BioP>
         Based in Paris, France, I develop fast & efficient web sites using
         advanced Javascript frameworks and Ruby for backend. My developing knowlege comes from years of self-study recently solidified at an intensive and quite awesome
@@ -111,7 +114,7 @@ function Me() {
 
       </BioP>
       <BioP>I also enjoy playing the guitar and sewing.</BioP>
-      <Menu/>
+        <Menu/>
     </Bio>
   )
 }

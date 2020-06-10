@@ -2,14 +2,15 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
+import media from "styled-media-query";
+
 import Layout from "../components/layout"
 import Me from "../components/me"
+import lw from "../images/lewagon.jpg"
 
 import SEO from "../components/seo"
 
-
 import "../components/layout.css"
-
 
 const ArticleDate = styled.h5`
   display: inline;
@@ -17,11 +18,75 @@ const ArticleDate = styled.h5`
 `
 
 const ArticleHeader = styled.h3`
+
   margin-bottom: 0;
 `
 
-const Projects = styled.section`
-  border-top: 1px solid black;
+const Projects = styled.div`
+
+
+`;
+
+
+const ProjectContainer = styled.section`
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 320px;
+  width: 100%;
+      background-color: pink;
+      margin-bottom: 6rem;
+
+`
+const ProjectContainerRight = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 320px;
+  width: 100%;
+      background-color: pink;
+            margin-bottom: 6rem;
+
+
+`
+const ProjectImage = styled.img`
+  height: 320px;
+   width: 100%;
+   margin-bottom: 0px;
+   object-fit:cover;
+
+  ${media.greaterThan("medium")`
+     width: 360px;
+
+
+  `}
+  ${media.greaterThan("1000px")`
+     width: 450px;
+  `}
+
+`
+const ProjectText = styled.div`
+    width: 100%;
+    background-color: pink;
+    padding-left: 1em;
+    padding-top: 1em;
+     height: auto;
+
+  ${media.greaterThan("medium")`
+     width: 220px;
+
+
+  `}
+    ${media.greaterThan("1000px")`
+
+         width: 300px;
+
+  `}
 `
 
 const IndexPage = ({ data }) => {
@@ -29,9 +94,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-      <Me/>
+      <Me />
       <Projects>
-        <h2>PROJECTS</h2>
         {data.allMarkdownRemark.edges
           .filter(({ node }) => {
             const rawDate = node.frontmatter.rawDate
@@ -47,15 +111,32 @@ const IndexPage = ({ data }) => {
                   color: inherit;
                 `}
               >
-                <ArticleHeader>{node.frontmatter.title}</ArticleHeader>
-                <p>{node.frontmatter.description}</p>
+                <ProjectContainer>
+                  <ProjectImage src={lw} alt="le wagon" />
+
+                  <ProjectText>
+
+                    <ArticleHeader>{node.frontmatter.title}</ArticleHeader>
+                    <p>{node.frontmatter.description}</p>
+                  </ProjectText>
+
+
+                </ProjectContainer>
+                                <ProjectContainerRight>
+                  <ProjectImage src={lw} alt="le wagon" />
+
+                  <ProjectText>
+
+                    <ArticleHeader>{node.frontmatter.title}</ArticleHeader>
+                    <p>{node.frontmatter.description}</p>
+                  </ProjectText>
+
+
+                </ProjectContainerRight>
               </Link>
             </div>
           ))}
-
       </Projects>
-
-
     </Layout>
   )
 }

@@ -46,7 +46,7 @@ const Layout = ({ children }) => (
         padding: 4em;
       }
       @media (min-width: 768px) {
-        padding: 6em;
+        padding: 5em;
       }
 
     `}
