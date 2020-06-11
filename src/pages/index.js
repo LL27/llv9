@@ -66,20 +66,23 @@ const ProjectImage = styled.div`
   margin-bottom: 0px;
 
 
-  ${media.greaterThan("800px")`
-     width: 65%;
+  ${media.greaterThan("1000px")`
+     width: 55%;
   `}
 `
 const ProjectText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   background-color: pink;
   padding: 1em;
   height: 100%;
 
 
-  ${media.greaterThan("800px")`
+  ${media.greaterThan("1000px")`
 
-         width: 35%;
+         width: 45%;
 
   `}
 `

@@ -10,7 +10,10 @@ const ContainerImageLeft = styled.section`
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-start;
-  height: auto;
+
+   ${media.greaterThan("1000px")`
+     height: 255px;
+  `}
   width: 100%;
   margin-bottom: 6rem;
 `
