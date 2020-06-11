@@ -8,7 +8,7 @@ const ContainerImageLeft = styled.section`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   height: auto;
   width: 100%;

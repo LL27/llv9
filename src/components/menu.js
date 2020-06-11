@@ -1,24 +1,33 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+import media from "styled-media-query"
 
-const MenuList = styled.ul`
+const MenuList = styled.div`
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: no-wrap;
-  justify-content: center;
+  justify-content: flex-start;
+
+  ${media.greaterThan("900px")`
+
+         flex-direction: row;
+
+  `}
 
 `
 
-const MenuItem = styled.li`
-  display: inline;
-  color: black;
-  margin-right: 16px;
+const MenuItem = styled.span`
+  margin-right: 1rem;
+  font-size: 1rem;
+  line-height: 1.6rem;
 `
 const MenuLink = styled.a`
+
   :&active {
     color: black;
   }
@@ -33,12 +42,12 @@ const Menu = () => {
         <MenuLink href="https://www.linkedin.com/in/lital-levin-4a989010/">linkedin</MenuLink>
       </MenuItem>
       <MenuItem>
-       <a href="mailto:lital@litallevin.com">
+       <MenuLink href="mailto:lital@litallevin.com">
 email me
-</a>
+</MenuLink>
       </MenuItem>
       <MenuItem>
-        <a href="https://github.com/LL27/llv9">source</a>
+        <MenuLink href="https://github.com/LL27/llv9">source</MenuLink>
       </MenuItem>
     </MenuList>
   )

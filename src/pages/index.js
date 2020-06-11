@@ -65,28 +65,19 @@ const ProjectImage = styled.div`
   width: 100%;
   margin-bottom: 0px;
 
-  ${media.greaterThan("medium")`
-     width: 360px;
 
-
-  `}
-  ${media.greaterThan("1000px")`
-     width: 450px;
+  ${media.greaterThan("900px")`
+     width: 400px;
   `}
 `
 const ProjectText = styled.div`
   width: 100%;
   background-color: pink;
   padding: 1em;
-
   height: auto;
 
-  ${media.greaterThan("medium")`
-     width: 220px;
 
-
-  `}
-  ${media.greaterThan("1000px")`
+  ${media.greaterThan("900px")`
 
          width: 300px;
 

@@ -6,7 +6,6 @@ import literary from "../images/polaroid-columbia.png"
 import haaretz from "../images/polaroid-haaretz.png"
 import lewagon from "../images/lewagon-polaroid.png"
 import Header from "./header"
-import Menu from "./menu"
 
 import { CSSTransition } from "react-transition-group"
 import "./hovers.css"
@@ -114,7 +113,6 @@ function Me() {
 
       </BioP>
       <BioP>I also enjoy playing the guitar and sewing.</BioP>
-        <Menu/>
     </Bio>
   )
 }
