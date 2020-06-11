@@ -2,17 +2,49 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import media from "styled-media-query";
+import media from "styled-media-query"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import Me from "../components/me"
-import lw from "../images/lewagon.jpg"
-import c from "../images/columbia-ny.jpg"
+import ProjectContainer from "../components/ProjectContainer"
 
+import Me from "../components/me"
+import lw from "../images/lewagon.png"
+import c from "../images/columbia-ny.jpg"
 
 import SEO from "../components/seo"
 
 import "../components/layout.css"
+
+
+const projects = [
+ {
+   title: "Dovalfon.com",
+   path: "dovalfon",
+   description: "The official website of a bestselling crime author",
+   technologies: "Ruby on Rails API and React.js",
+   images: ["https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png", ],
+
+ },
+  {
+   title: "",
+   path: "dovalfon",
+   description: "The official website of a bestselling crime author",
+   technologies: "Ruby on Rails API and React.js",
+   images: ["https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png", ],
+
+ },
+   {
+   title: "",
+   path: "dovalfon",
+   description: "The official website of a bestselling crime author",
+   technologies: "Ruby on Rails API and React.js",
+   images: ["https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png", ],
+
+ }
+
+]
+const alternatingContainer = ['photoright', 'photoleft'];
 
 const ArticleDate = styled.h5`
   display: inline;
@@ -20,48 +52,18 @@ const ArticleDate = styled.h5`
 `
 
 const ArticleHeader = styled.h3`
-
   margin-bottom: 0;
 `
 
 const Projects = styled.div`
   padding-top: 5rem;
+`
 
-`;
 
-
-const ProjectContainer = styled.section`
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
+const ProjectImage = styled.div`
   height: 320px;
   width: 100%;
-      background-color: yellow;
-      margin-bottom: 6rem;
-
-`
-const ProjectContainerRight = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: 320px;
-  width: 100%;
-      background-color: yellow;
-            margin-bottom: 6rem;
-
-
-`
-const ProjectImage = styled.img`
-  height: 320px;
-   width: 100%;
-   margin-bottom: 0px;
-   object-fit:cover;
-   background-color: grey;
+  margin-bottom: 0px;
 
   ${media.greaterThan("medium")`
      width: 360px;
@@ -71,74 +73,59 @@ const ProjectImage = styled.img`
   ${media.greaterThan("1000px")`
      width: 450px;
   `}
-
 `
 const ProjectText = styled.div`
-    width: 100%;
-    background-color: pink;
-    padding-left: 1em;
-    padding-top: 1em;
-     height: auto;
+  width: 100%;
+  background-color: pink;
+  padding: 1em;
+
+  height: auto;
 
   ${media.greaterThan("medium")`
      width: 220px;
 
 
   `}
-    ${media.greaterThan("1000px")`
+  ${media.greaterThan("1000px")`
 
          width: 300px;
 
   `}
 `
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
       <Me />
       <Projects>
-        {data.allMarkdownRemark.edges
-          .filter(({ node }) => {
-            const rawDate = node.frontmatter.rawDate
-            const date = new Date(rawDate)
-            return date < new Date()
-          })
-          .map(({ node }) => (
-            <div key={node.id}>
+        {projects.map((node, index) => (
+            <div key={index}>
               <Link
-                to={node.frontmatter.path}
+                to={node.path}
                 css={css`
                   text-decoration: none;
                   color: inherit;
                 `}
               >
-                <ProjectContainer>
-                  <ProjectImage src={lw} alt="le wagon" />
-
+                <ProjectContainer direction={alternatingContainer[index % alternatingContainer.length]}>
+                  <ProjectImage>
+                    <img src={node.images[0]} alt=""  css={css`
+                  border-bottom: 0;
+                `}/>
+                  </ProjectImage>
                   <ProjectText>
+                    <ArticleHeader>{node.title}</ArticleHeader>
+                    <p>{node.description}</p>
+                    <h6>Technologies:</h6>
+                    {node.technologies}
 
-                    <ArticleHeader>{node.frontmatter.title}</ArticleHeader>
-                    <p>{node.frontmatter.description}</p>
                   </ProjectText>
-
-
                 </ProjectContainer>
-                                <ProjectContainerRight>
-                  <ProjectImage src={c} alt="columbia-ny" />
-
-                  <ProjectText>
-
-                    <ArticleHeader>{node.frontmatter.title}</ArticleHeader>
-                    <p>{node.frontmatter.description}</p>
-                  </ProjectText>
-
-
-                </ProjectContainerRight>
               </Link>
-            </div>
-          ))}
+      </div>
+       ))}
       </Projects>
     </Layout>
   )
@@ -151,28 +138,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            rawDate: date
-            path
-            description
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
       }
     }
   }
