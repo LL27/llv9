@@ -61,25 +61,25 @@ const Projects = styled.div`
 
 
 const ProjectImage = styled.div`
-  height: 320px;
+  height: auto;
   width: 100%;
   margin-bottom: 0px;
 
 
-  ${media.greaterThan("900px")`
-     width: 400px;
+  ${media.greaterThan("800px")`
+     width: 65%;
   `}
 `
 const ProjectText = styled.div`
   width: 100%;
   background-color: pink;
   padding: 1em;
-  height: auto;
+  height: 100%;
 
 
-  ${media.greaterThan("900px")`
+  ${media.greaterThan("800px")`
 
-         width: 300px;
+         width: 35%;
 
   `}
 `
@@ -103,7 +103,7 @@ const IndexPage = () => {
                 <ProjectContainer direction={alternatingContainer[index % alternatingContainer.length]}>
                   <ProjectImage>
                     <img src={node.images[0]} alt=""  css={css`
-                  border-bottom: 0;
+                  margin-bottom: 0;
                 `}/>
                   </ProjectImage>
                   <ProjectText>

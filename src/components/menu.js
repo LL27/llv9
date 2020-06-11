@@ -8,17 +8,15 @@ const MenuList = styled.div`
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: no-wrap;
   justify-content: flex-start;
 
-  ${media.greaterThan("900px")`
-
-         flex-direction: row;
-
+  ${media.greaterThan("730px")`
+    margin-top: 0;
   `}
-
 `
 
 const MenuItem = styled.span`
