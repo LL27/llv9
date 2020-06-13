@@ -19,11 +19,11 @@ import "../components/layout.css"
 
 const projects = [
  {
-   title: "Dovalfon.com",
+   title: "Official Author Website",
    path: "dovalfon",
    description: "The official website of a bestselling crime author",
-   technologies: "Ruby on Rails API and React.js",
-   images: ["https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png", ],
+   technologies: "Ruby on Rails API, React.js and Heroku",
+   images: ["https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovallfon-homepage_sc8gr2.png", "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovalfon-interviewspage_mlanfb.png", "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovallfon-homepage_sc8gr2.png", "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovalfon-biopage_vdgk6g.png" ],
 
  },
   {
@@ -46,17 +46,22 @@ const projects = [
 ]
 const alternatingContainer = ['photoright', 'photoleft'];
 
-const ArticleDate = styled.h5`
-  display: inline;
-  color: #606060;
-`
 
 const ArticleHeader = styled.h3`
-  margin-bottom: 0;
+  margin-right: 1rem;
+  margin-bottom: 0px;
+  align-self: flex-start;
+   ${media.greaterThan("1000px")`
+       margin-bottom: 1.25rem;
+  `}
 `
 
 const Projects = styled.div`
   padding-top: 5rem;
+`
+
+const Par = styled.p`
+  margin-bottom: 0;
 `
 
 
@@ -64,6 +69,13 @@ const ProjectImage = styled.div`
   height: auto;
   width: 100%;
   margin-bottom: 0px;
+}
+
+
+
+
+
+
 
 
   ${media.greaterThan("1000px")`
@@ -72,17 +84,21 @@ const ProjectImage = styled.div`
 `
 const ProjectText = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
-  background-color: pink;
-  padding: 1em;
+  padding: 1rem 0rem;
   height: 100%;
 
 
   ${media.greaterThan("1000px")`
-
+         flex-direction: column;
          width: 45%;
+          padding: 1.45rem 1.2rem;
+          justify-content: flex-start;
+
+
 
   `}
 `
@@ -107,13 +123,17 @@ const IndexPage = () => {
                   <ProjectImage>
                     <img src={node.images[0]} alt=""  css={css`
                   margin-bottom: 0;
+                   border-radius: 20px;
+                     border: 18px solid hsla(0, 0%, 0%, 0.04);
+
+                   box-shadow: 0 0 1px 0px hsla(0, 0%, 0%, 0.4);
+
                 `}/>
                   </ProjectImage>
                   <ProjectText>
                     <ArticleHeader>{node.title}</ArticleHeader>
-                    <p>{node.description}</p>
-                    <h6>Technologies:</h6>
-                    {node.technologies}
+                    <Par><strong>Main technologies:</strong> {node.technologies}</Par>
+
 
                   </ProjectText>
                 </ProjectContainer>
