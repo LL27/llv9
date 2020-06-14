@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import Layout from "../components/layout"
 
@@ -74,7 +75,12 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <Me />
-      <ProjectsWrapper>
+      <ProjectsWrapper id="works">
+        <h2 css={css`
+                  border-bottom: 1px black solid;
+                  padding-bottom: 1.45rem;
+                  color: inherit;
+                `}>works</h2>
         {projects
           .map((node, index) => (
           <div key={index}>

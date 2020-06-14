@@ -17,16 +17,25 @@
     "description": "",
     "technologies": "React.js, Gatsby, Netifly",
     "images": [
-      "https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png"
+      "https://res.cloudinary.com/litall/image/upload/v1592168287/litallevin/Screenshot_2020-06-14_at_22.44.25_yghobe.png"
     ]
   },
   {
-    "title": "",
-    "path": "fs",
-    "description": "The official website of a bestselling crime author",
-    "technologies": "Ruby on Rails API and React.js",
+    "title": "Designer Portfolio",
+    "path": "meravperez",
+    "description": "",
+    "technologies": "Wordpress",
     "images": [
-      "https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png"
+      "https://res.cloudinary.com/litall/image/upload/v1592168493/litallevin/merav-fullscreen_jiyvky.png"
+    ]
+  },
+  {
+    "title": "Art Festival",
+    "path": "intimadance",
+    "description": "",
+    "technologies": "HTML, CSS, Javascript, FTP",
+    "images": [
+      "https://res.cloudinary.com/litall/image/upload/v1592168461/litallevin/intima-desktop-1_vihhcz.png"
     ]
   }
 ]

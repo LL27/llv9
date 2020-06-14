@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import media from "styled-media-query"
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const MenuList = styled.div`
   list-style: none;
@@ -20,21 +21,30 @@ const MenuList = styled.div`
 `
 
 const MenuItem = styled.span`
+  font-weight: 700;
   margin-right: 1rem;
   font-size: 1rem;
   line-height: 1.6rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
 `
 const MenuLink = styled.a`
-
-  :&active {
+  color: black;
+  text-decoration: none;
+  &:active {
     color: black;
   }
+   &:visited {
+    color: black;
+  }&:hover {
+    text-decoration: underline;
 `
 const Menu = () => {
   return (
     <MenuList>
-      <MenuItem>
-        <Link>works</Link>
+      <MenuItem onClick={() => scrollTo('#works')}>
+        works
       </MenuItem>
       <MenuItem>
         <MenuLink href="https://www.linkedin.com/in/lital-levin-4a989010/">linkedin</MenuLink>
