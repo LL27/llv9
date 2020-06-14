@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Official Author Website",
+    "path": "dovalfon",
+    "description": "The official website of a bestselling crime author",
+    "technologies": "Ruby on Rails API, React.js and Heroku",
+    "images": [
+      "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovallfon-homepage_sc8gr2.png",
+      "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovalfon-interviewspage_mlanfb.png",
+      "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovallfon-homepage_sc8gr2.png",
+      "https://res.cloudinary.com/litall/image/upload/v1591986046/litallevin/dovalfon-biopage_vdgk6g.png"
+    ]
+  },
+  {
+    "title": "Technological Company",
+    "path": "galsys",
+    "description": "",
+    "technologies": "React.js, Gatsby, Netifly",
+    "images": [
+      "https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png"
+    ]
+  },
+  {
+    "title": "",
+    "path": "fs",
+    "description": "The official website of a bestselling crime author",
+    "technologies": "Ruby on Rails API and React.js",
+    "images": [
+      "https://res.cloudinary.com/litall/image/upload/v1589978102/ygpgfm0py2h8nl57llxg6v38u4ln.png"
+    ]
+  }
+]

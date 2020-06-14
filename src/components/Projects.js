@@ -1,23 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 
-
-import Layout from "../components/layout"
-
+import projects from "../data/projects.json"
+import ProjectContainer from "./ProjectContainer"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import media from "styled-media-query"
-
-import ProjectContainer from "../components/ProjectContainer"
-
-import projects from "../data/projects"
-
-import Me from "../components/me"
-
-import SEO from "../components/seo"
-
-import "../components/layout.css"
-
+import FsLightbox from "fslightbox-react"
 
 const alternatingContainer = ["photoright", "photoleft"]
 
@@ -67,25 +55,23 @@ const ProjectText = styled.div`
 
   `}
 `
+class Projects extends React.Component {
+  constructor(props) {
+    super(props)
 
-const IndexPage = () => {
+    this.state = {
+      isSelected: false,
+      projects: projects,
+    }
+  }
 
-  return (
-    <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <Me />
+
+
+  render() {
+    return (
       <ProjectsWrapper>
-        {projects
-          .map((node, index) => (
+        {projects.map((node, index) => (
           <div key={index}>
-                   <Link
-                to={node.path}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-
             <ProjectContainer
               direction={
                 alternatingContainer[index % alternatingContainer.length]
@@ -99,7 +85,9 @@ const IndexPage = () => {
                   css={css`
                     margin-bottom: 0;
                     border-radius: 20px;
+                    border: 18px solid hsla(0, 0%, 0%, 0.04);
 
+                    box-shadow: 0 0 1px 0px hsla(0, 0%, 0%, 0.4);
                   `}
                 />
               </ProjectImage>
@@ -111,22 +99,11 @@ const IndexPage = () => {
                 </Par>
               </ProjectText>
             </ProjectContainer>
-            </Link>
           </div>
         ))}
       </ProjectsWrapper>
-    </Layout>
-  )
+    )
+  }
 }
 
-export default IndexPage
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export default Projects

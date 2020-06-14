@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import Layout from "../components/layout"
+import Header from "../components/header"
+
 import SEO from "../components/seo"
 
 
@@ -9,24 +11,18 @@ import SEO from "../components/seo"
 const Content = styled.div`
   margin: 0 auto;
   max-width: 860px;
-  padding: 1.45rem 1.0875rem;
+  text-align: center;
+
 `
 
 const MarkedHeader = styled.h1`
-  display: inline;
-  border-radius: 1em 0 1em 0;
-  background-image: linear-gradient(
-    -100deg,
-    rgba(255, 250, 150, 0.15),
-    rgba(255, 250, 150, 0.8) 100%,
-    rgba(255, 250, 150, 0.25)
-  );
+  font-family: 'Lora', Fallback, serif;
+
+
+
 `
 
-const HeaderDate = styled.h3`
-  margin-top: 10px;
-  color: #606060;
-`
+
 
 // STYLE THE TAGS INSIDE THE MARKDOWN HERE
 const MarkdownContent = styled.div`
@@ -56,11 +52,11 @@ export default ({ data }) => {
         title={project.frontmatter.title}
         description={project.frontmatter.description || project.excerpt}
       />
+      <Header/>
       <Content>
         <MarkedHeader>{project.frontmatter.title}</MarkedHeader>
-        <HeaderDate>
-          {project.frontmatter.date} - {project.fields.readingTime.text}
-        </HeaderDate>
+        <p>{project.frontmatter.description}</p>
+         <p>Main technologies: {project.frontmatter.technologies}</p>
         <MarkdownContent dangerouslySetInnerHTML={{ __html: project.html }} />
       </Content>
     </Layout>
@@ -73,14 +69,10 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 160)
       frontmatter {
-        date(formatString: "DD MMMM, YYYY")
         path
         title
-      }
-      fields {
-        readingTime {
-          text
-        }
+        description
+        technologies
       }
     }
   }

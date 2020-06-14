@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import Menu from "./menu"
@@ -43,8 +43,13 @@ const Header = () => (
             width: 210px;
           `}
         >
-          <NameHeader>{data.site.siteMetadata.title}</NameHeader>
+          <Link css={css`
+                  text-decoration: none;
+                  color: inherit;
+                `}
+                to="/" ><NameHeader>{data.site.siteMetadata.title}</NameHeader>
           <Description>{data.site.siteMetadata.subtitle}</Description>
+          </Link>
         </div>
         <Menu />
       </Container>
