@@ -92,7 +92,6 @@ function Me() {
             <img className="polaroid-image" src={haaretz} />
           </HoverImage>
         </CSSTransition>
-
       </BioP>
     </Bio>
   )
