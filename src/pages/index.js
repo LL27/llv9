@@ -73,7 +73,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Home" keywords={[`javascrtipt`, `react`, `web development`]} />
       <Me />
       <ProjectsWrapper id="works">
         <h2 css={css`

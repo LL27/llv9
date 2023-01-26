@@ -52,26 +52,8 @@ function Me() {
 
       <BioP>
         Based in Paris, France, I develop fast & efficient web sites using
-        advanced Javascript frameworks and Ruby for backend. My developing knowlege comes from years of self-study recently solidified at an intensive and quite awesome
-         {" "}<BioLink
-          onMouseEnter={() => setShowImageOne(true)}
-          onMouseLeave={() => setShowImageOne(false)}
-        >
-           coding boocamp
-        </BioLink>{" "}.<CSSTransition
-          in={showImageOne}
-          timeout={300}
-          classNames="polaroid"
-          unmountOnExit
-        >
-          <HoverImage
-            onMouseEnter={() => setShowImageOne(true)}
-            onMouseLeave={() => setShowImageOne(false)}
-          >
-            <img className="polaroid-image" src={lewagon} />
-          </HoverImage>
-        </CSSTransition> I enjoy planning
-        well-organized web apps that successfully map content into the site’s
+        Javascript frameworks such as React and Gatsby, Ruby on Rails and Wordpress. I enjoy planning
+        well organized web apps that successfully map content into the site’s
         structure and visual elements, drawing on techniques earned during my
 
         {" "}<BioLink
@@ -112,7 +94,6 @@ function Me() {
         </CSSTransition>
 
       </BioP>
-      <BioP>I also enjoy playing the guitar and sewing.</BioP>
     </Bio>
   )
 }
